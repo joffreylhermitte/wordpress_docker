@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+    ports:
+      - "80:80"
+    build:
+      context: .
+      dockerfile: PHP.Dockerfile
+    volumes:
+      - ./app:/var/www/html
+      - ./vhost.conf:/etc/apache2/sites-enabled/vhost.conf
